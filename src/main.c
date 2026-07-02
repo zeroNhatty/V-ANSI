@@ -1,10 +1,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-#include "../include/utils.h"
-
-void test();
-
 int main() {
     int choice;
     while (true) {
@@ -19,7 +15,6 @@ int main() {
                 printf("vid player");
                 break;
             case 3:
-                test();
                 break;
             case 0:
                 printf("Exiting...\n\n\n");
@@ -30,9 +25,4 @@ int main() {
                 fflush(stdout);
         }
     }
-}
-
-void test() {
-    Window_Dimensions dimensions = get_tty_dimensions();
-    printf("width : %d , height : %d\n\n" , dimensions.tty_width , dimensions.tty_height);
 }
