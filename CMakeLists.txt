@@ -20,3 +20,15 @@ add_executable(v_ansi src/main.c
 
 target_include_directories(v_ansi PRIVATE ${FFMPEG_INCLUDE_DIRS})
 target_link_libraries(v_ansi ${FFMPEG_LIBRARIES})
+if (CMAKE_C_COMPILER_ID STREQUAL "GNU" OR CMAKE_C_COMPILER_ID STREQUAL "Clang")
+    target_compile_options(v_ansi PRIVATE
+            -Wall
+            -Wextra
+            -Wpedantic
+            -Werror
+            -Wshadow
+            -Wconversion
+            -Wdouble-promotion
+            -Wformat=2
+            -Wundef)
+endif()
