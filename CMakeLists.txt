@@ -13,9 +13,10 @@ pkg_check_modules(FFMPEG REQUIRED
 )
 
 add_executable(v_ansi src/main.c
-        include/colors.h
+        src/include/colors.h
         src/renderer.c
-        include/utils.h
+        src/include/utils.h
+        src/include/values.h
 )
 
 target_include_directories(v_ansi PRIVATE ${FFMPEG_INCLUDE_DIRS})
